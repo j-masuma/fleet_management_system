@@ -9,8 +9,15 @@ const Api=()=>{
         })
         .catch(error=>console.error(`Error : ${error}`));
     }
-    return{
-        getAllDrivers
+    const saveDrivers=(drivers)=>{
+        return axios.post(`${url}/drivers`,drivers).then((response)=>{
+            return response.data;
+        })
+        .catch(error=>console.error(`Error : ${error}`));
     }
+    return{
+        getAllDrivers,saveDrivers
+    }
+
 }
 export default Api;

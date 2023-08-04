@@ -2,14 +2,14 @@
 
 import Header from "../header/Header";
 
-export default function ScreenContianer({
+export default function ScreenContainer({
   pageTitle,
   children,
   handleAddButton,
   handleOnChange,
 }) {
   return (
-    <div className="bg-slate-400">
+    <div className="bg-white">
       <Header
         title={pageTitle}
         handleAddButton={(event) => handleAddButton(event)}

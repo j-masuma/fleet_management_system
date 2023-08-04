@@ -6,9 +6,8 @@ import Api from "../../api/http.js";
 import ScreenContainer from "../../components/layout/ScreenContainer.jsx";
 
 import Modal from "../../components/Modal.jsx";
-
-import Formv from "./Formv.jsx";
-function Vehicle() {
+import Formd from "./Formd.jsx";
+export default function Driver() {
   const columns = useMemo(
     () => [
       {
@@ -20,13 +19,17 @@ function Vehicle() {
         accessor: "name",
       },
       {
-        Header: "Model",
-        accessor: "model",
+        Header: "Contact",
+        accessor: "contact",
       },
 
       {
-        Header: "Availability",
-        accessor: "availability",
+        Header: "CNIC",
+        accessor: "cnic",
+      },
+      {
+        Header: "Experience",
+        accessor: "experience",
       },
     ],
     []
@@ -48,7 +51,7 @@ function Vehicle() {
   return (
     <>
       <ScreenContainer
-        pageTitle="Vehicles Info"
+        pageTitle="Drivers Info"
         handleAddButton={handleAddButton}
       >
         <Table
@@ -61,13 +64,11 @@ function Vehicle() {
         <Modal
           isVisible={showModal}
           setShowModal={setShowModal}
-          title="Add Vehicles"
+          title="Add Drivers"
         >
-          <Formv />
+          <Formd />
         </Modal>
       )}
     </>
   );
 }
-
-export default Vehicle;
